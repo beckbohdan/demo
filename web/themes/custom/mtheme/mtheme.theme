@@ -1,0 +1,193 @@
+<?php
+
+use Drupal\Core\Theme\ThemeSettings;
+use Drupal\Core\Template\Attribute;
+
+function mtheme_preprocess_html(&$variables) {
+  // add information about the number of sidebars
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'layout-no-sidebars';
+  }
+
+  if (!empty($variables['page']['featured_top'])) {
+    $variables['attributes']['class'][] = 'has-featured-top';
+  }
+
+  // fix header lib
+  $fixed_header = theme_get_setting('fixed_header');
+  if ($fixed_header) {
+    $variables['attributes']['class'][] = 'fixed-header-enabled';
+    $variables['#attached']['library'][] = 'mtheme/fixed-header';
+  }
+}
+
+  // button to top lib
+  $to_top = theme_get_setting('scrolltop_display');
+  if ($to_top) {
+    $variables['#attached']['library'][] = 'mtheme/to-top';
+  }
+
+function mtheme_preprocess_breadcrumb(&$variables){
+  if($variables['breadcrumb']){
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+
+    if (!empty($page_title)) {
+      $variables['breadcrumb'][] = array(
+        'text' => $page_title
+      );
+      $variables['#cache']['contexts'][] = 'url';
+    }
+  }
+}
+
+function mtheme_preprocess_page_title(&$variables) {
+  
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    
+    $variables['title_prefix']['shortcut_wrapper'] = array(
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    );
+    $variables['title_suffix']['shortcut_wrapper'] = array(
+      '#markup' => '</div>',
+      '#weight' => -99,
+    );
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}
+
+function mtheme_preprocess_page(&$variables) {
+  $header_top_right = $variables['page']['header_top_right'];
+  $header_top_left = $variables['page']['header_top_left'];
+  $header = $variables['page']['header'];
+  $sidebar_first = $variables['page']['sidebar_first'];
+  $sidebar_second = $variables['page']['sidebar_second'];
+  $footer_first = $variables['page']['footer_first'];
+  $footer_second = $variables['page']['footer_second'];
+  $footer_third = $variables['page']['footer_third'];
+  $footer_fourth = $variables['page']['footer_fourth'];
+  
+
+  if($sidebar_first && $sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-6';
+    $variables['sidebar_first_grid_class'] = 'col-md-3';
+    $variables['sidebar_second_grid_class'] = 'col-md-3';
+  } elseif ($sidebar_first && !$sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-8';
+    $variables['sidebar_first_grid_class'] = 'col-md-4';
+  } elseif (!$sidebar_first && $sidebar_second) {
+    $variables['main_grid_class'] = 'col-md-8';
+    $variables['sidebar_second_grid_class'] = 'col-md-4';
+  } else {
+    $variables['main_grid_class'] = 'col-md-8 col-md-offset-2';
+    $variables['sidebar_first_grid_class'] = '';
+    $variables['sidebar_second_grid_class'] = '';
+  }
+
+  if ($header) {
+    $variables['header_inside_left_grid_class'] = 'col-md-8';
+  } else {
+    $variables['header_inside_left_grid_class'] = 'col-md-12';
+  }
+
+  if ($header_top_right) {
+    if ($header_top_left) {
+      $variables['header_top_inside_grid_class'] = 'col-md-6';
+    } else {
+      $variables['header_top_inside_grid_class'] = 'col-md-12';
+    }
+  } else {
+    $variables['header_top_inside_grid_class'] = 'col-md-12';
+  }
+
+  if ($footer_first && $footer_second && $footer_third && $footer_fourth) {
+    $variables['footer_grid_class'] = 'col-sm-3';
+  } elseif ((!$footer_first && $footer_second && $footer_third && $footer_fourth) || ($footer_first && !$footer_second && $footer_third && $footer_fourth)
+  || ($footer_first && $footer_second && !$footer_third && $footer_fourth) || ($footer_first && $footer_second && $footer_third && !$footer_fourth)) {
+    $variables['footer_grid_class'] = 'col-sm-4';
+  } elseif ((!$footer_first && !$footer_second && $footer_third && $footer_fourth) || (!$footer_first && $footer_second && !$footer_third && $footer_fourth)
+  || (!$footer_first && $footer_second && $footer_third && !$footer_fourth) || ($footer_first && !$footer_second && !$footer_third && $footer_fourth)
+  || ($footer_first && !$footer_second && $footer_third && !$footer_fourth) || ($footer_first && $footer_second && !$footer_third && !$footer_fourth)) {
+    $variables['footer_grid_class'] = 'col-sm-6';
+  } else {
+    $variables['footer_grid_class'] = 'col-sm-12';
+  }
+
+function mtheme_preprocess_maintenance_page(&$variables) {
+  if (!$variables['db_is_active']) {
+    $variables['site_name'] = '';
+  }
+
+  $variables['#attached']['library'][] = 'mtheme/maintenance_page';
+}
+
+// remove "add new comment" link when the comment form is on page
+
+function mtheme_preprocess_node(&$variables) {
+  if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
+    unset($variables['content']['links']['comment']['#links']['comment-add']);
+  }
+
+  $variables['posted_ago'] = \Drupal::service('date.formatter')->formatInterval(REQUEST_TIME - $variables['node']->getCreatedTime(), $granularity = 1);
+  $variables['changed_ago'] = \Drupal::service('date.formatter')->formatInterval(REQUEST_TIME - $variables['node']->getChangedTime(), $granularity = 1);
+  if (isset($variables['content']['field_image']['#theme'])){
+    $variables['has_image'] = true;
+  } else {
+    $variables['has_image'] = false;
+  }
+  if ($variables['teaser'] && isset($variables['content']['field_image']['#theme'])) {
+    $variables['content_class'] = 'with-image';
+  } else {
+    $variables['content_class'] = 'without-image';
+  }
+}
+
+function mtheme_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $variables['attributes']['class'][] = 'clearfix';
+  }
+}
+
+function mtheme_preprocess_menu(&$variables) {
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+function mtheme_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#form_id'] == 'search_block_form') {
+    $suggestions[] = 'form__search_block_form';
+  }
+}
+
+function mtheme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if (in_array($form_id, ['search_block_form', 'search_form'])) {
+    $key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
+    if (!isset($form[$key]['submit']['#attributes'])) {
+      $form[$key]['submit']['#attributes'] = new Attribute();
+    }
+    $form[$key]['submit']['#attributes']->addClass('search-form__submit');
+  }
+}
+
+
+function mtheme_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  $variables['view_mode'] = $element['#view_mode'];
+}
+
+function mtheme_preprocess_field__entity_reference(&$variables) {
+  $variables['entity_reference_target_type'] = $variables['element']['#items']->getItemDefinition()->getSetting('target_type');
+}
+?>

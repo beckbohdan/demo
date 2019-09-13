@@ -1,0 +1,101 @@
+bootstrap:
+  version: 3.3.7
+  css:
+    theme:
+      bootstrap/css/bootstrap.css: {}
+  js:
+    bootstrap/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+      
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/base/elements.css: { weight: 1 }
+      css/base/layout.css: { weight: 1 }
+      css/base/font.css: { weight: 1 }
+    component:
+      css/components/site-branding.css: {}
+      css/components/block.css: {}
+      css/components/primary-menu.css: {}
+      css/components/menu.css: {}
+      css/components/fixed-header.css: {}
+      css/components/to-top.css: {}
+      css/components/comments.css: {}
+      css/components/search.css: {}
+      css/components/node-links.css: {}
+    theme:
+      css/theme/default.css: {}
+
+fontawesome:
+  version: 4.7.0
+  remote: //use.fontawesome.com/
+  js:
+    //use.fontawesome.com/f479fb1064.js: {}
+  license:
+    name: MIT
+    url: //opensource.org/licenses/mit-license.html
+    gpl-compatible: true
+
+fonts-roboto:
+  version: VERSION
+  remote: //fonts.googleapis.com/css
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Roboto:400,400italic,700,300,700italic&subset=latin-ext,latin,greek: {}
+  license:
+    name: Apache License, version 2.0
+    url: //www.apache.org/licenses/LICENSE-2.0.html
+    gpl-compatible: true
+
+to-top:
+  version: VERSION
+  css:
+    component:
+      css/components/to-top.css: {}
+  js:
+    js/to-top.js: { scope: 'footer' }
+  dependencies:
+    - core/jquery
+
+fixed-header:
+  version: VERSION
+  css:
+    component:
+      css/components/fixed-header.css: {}
+  js:
+    js/fixed-header.js: { scope: 'footer', weight: -1 }
+  dependencies:
+    - core/jquery
+
+
+# Uncomment for LESS source JavaScript files.
+#  js:
+#    bootstrap/js/affix.js: {}
+#    bootstrap/js/alert.js: {}
+#    bootstrap/js/button.js: {}
+#    bootstrap/js/carousel.js: {}
+#    bootstrap/js/collapse.js: {}
+#    bootstrap/js/dropdown.js: {}
+#    bootstrap/js/modal.js: {}
+#    bootstrap/js/tooltip.js: {}
+#    bootstrap/js/popover.js: {}
+#    bootstrap/js/scrollspy.js: {}
+#    bootstrap/js/tab.js: {}
+#    bootstrap/js/transition.js: {}
+
+# Uncomment for SASS source JavaScript files.
+#  js:
+#    bootstrap/assets/javascripts/bootstrap/affix.js: {}
+#    bootstrap/assets/javascripts/bootstrap/alert.js: {}
+#    bootstrap/assets/javascripts/bootstrap/button.js: {}
+#    bootstrap/assets/javascripts/bootstrap/carousel.js: {}
+#    bootstrap/assets/javascripts/bootstrap/collapse.js: {}
+#    bootstrap/assets/javascripts/bootstrap/dropdown.js: {}
+#    bootstrap/assets/javascripts/bootstrap/modal.js: {}
+#    bootstrap/assets/javascripts/bootstrap/tooltip.js: {}
+#    bootstrap/assets/javascripts/bootstrap/popover.js: {}
+#    bootstrap/assets/javascripts/bootstrap/scrollspy.js: {}
+#    bootstrap/assets/javascripts/bootstrap/tab.js: {}
+#    bootstrap/assets/javascripts/bootstrap/transition.js: {}

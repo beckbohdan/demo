@@ -1,0 +1,51 @@
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+  {% block node_side %}
+  {% endblock %}
+  <div class="node-content">
+    {% block above_header %}
+    {% endblock %}
+    <header>
+      {% block title_area %}
+        {{ title_prefix }}
+        {% if not page %}
+          <h2{{ title_attributes.addClass('node__title title') }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+          </h2>
+        {% endif %}
+        {{ title_suffix }}
+      {% endblock %}
+      {% block meta_area %}
+        {% if display_submitted %}
+          <div class="node__meta">
+            <span{{ author_attributes.addClass('user-picture') }}>
+              {{ author_picture }}
+            </span>
+            <span class="post-info">
+              <span>{% trans %} {{ posted_ago }} ago{% endtrans %}</span>
+              <span>{% trans %} By {{ author_name }}{% endtrans %}</span>
+            </span>
+            {{ metadata }}
+          </div>
+        {% endif %}
+      {% endblock %}
+    </header>
+    <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+      {% block content %}
+        {{ content|without('links') }}
+      {% endblock %}
+      {{ content.links }}
+    </div>
+  </div>
+</article>

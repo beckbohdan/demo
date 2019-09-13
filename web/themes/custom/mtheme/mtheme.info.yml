@@ -1,0 +1,35 @@
+core: 8.x
+type: theme
+base theme: classy
+name: 'mtheme'
+description: 'theme with bootstrap'
+
+
+libraries:
+  - mtheme/bootstrap
+  - mtheme/global-styling
+  - mtheme/fontawesome
+  - mtheme/fonts-roboto
+  - mtheme/to-top
+  - mtheme/superfish
+
+regions:
+  header_top_left: 'Header Top Left'
+  header_top_right: 'Header Top Right'
+  navigation: 'Navigation'
+  header: 'Header'
+  top_content: 'Top Content'
+  banner: 'Banner'
+  highlighted: 'Highlighted'
+  promoted: 'Promoted Area'
+  content: 'Content'
+  sidebar_first: 'First Sidebar'
+  sidebar_second: 'Second Sidebar'
+  footer_first: 'Footer First'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+  footer_fourth: 'Footer Fourth'
+  sub_footer_left: 'Subfooter Left'
+  footer: 'Subfooter Right'
+  
+

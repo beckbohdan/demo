@@ -1,0 +1,268 @@
+<div id="toTop"><i class="fa fa-chevron-circle-up"></i></div>
+<header class="headers-wrapper">
+  {% if page.header_top_left or page.header_top_right %}
+    <div id="header-top" role="banner" class="clearfix colored-area {{ colored_area_class }}">
+      <div class="container">
+        {# #header-top-inside #}
+        <div id="header-top-inside" class="clearfix">
+          <div class="row">
+            {% if page.header_top_left %}
+              <div class="{{ header_top_inside_grid_class }}">
+                {# #header-top-left #}
+                <div id="header-top-left" class="clearfix">
+                  <div class="header-top-area">
+
+                    {% if page.header_top_left %}
+                      {{ page.header_top_left }}
+                    {% endif %}
+
+                  </div>
+                </div>
+                {# EOF:#header-top-left #}
+              </div>
+            {% endif %}
+            {% if page.header_top_right %}
+              <div class="{{ header_top_inside_grid_class }}">
+                {# #header-top-right #}
+                <div id="header-top-right" class="clearfix">
+                  <div class="header-top-area">
+                    {{ page.header_top_right }}
+                  </div>
+                </div>
+                {# EOF:#header-top-right #}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        {# EOF: #header-top-inside #}
+      </div>
+    </div>
+  {% endif %}
+  {# EOF: #header-top #}
+
+  {# #header #}
+  {% if page.navigation or page.header %}
+    <div id="header" class="colored-area {{ colored_area_class }}">
+      {% if mt_site_name %}
+        <div class="site-name site-name__header">
+          <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ mt_site_name }}</a>
+        </div>
+      {% endif %}
+      <div class="container">
+        {# #header-inside #}
+        <div id="header-inside" class="clearfix">
+          <div class="row">
+            <div class="header-area">
+              <div class="{{ header_inside_left_grid_class }}">
+                {# #header-inside-left #}
+                <div id="header-inside-left" class="clearfix">
+                  {# #main-navigation #}
+                  <div id="main-navigation" class="clearfix">
+                    <nav role="navigation">
+                      {% if page.navigation %}
+                        {{ page.navigation }}
+                      {% endif %}
+                    </nav>
+                  </div>
+                  {# EOF: #main-navigation #}
+                </div>
+                {# EOF:#header-inside-left #}
+              </div>
+              {% if page.header %}
+                <div class="col-md-4">
+                  {# #header-inside-right #}
+                  <div id="header-inside-right" class="clearfix">
+                    {{ page.header }}
+                  </div>
+                  {# EOF:#header-inside-right #}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {# EOF: #header-inside #}
+      </div>
+    </div>
+  {% endif %}
+  {# EOF: #header #}
+</header>
+
+{# #page #}
+<div id="page" class="clearfix">
+  <div class="container">
+    {# #page-inside #}
+    <div id="page-inside">
+
+      {% if page.top_content %}
+        {# #top-content #}
+        <div id="top-content">
+          {# #top-content-inside #}
+          <div id="top-content-inside" class="clearfix">
+            <div class="row">
+              <div class="col-md-12">
+                {{ page.top_content }}
+              </div>
+            </div>
+          </div>
+          {# EOF:#top-content-inside #}
+        </div>
+        {# EOF: #top-content #}
+      {% endif %}
+
+      {# #main-content #}
+      <div id="main-content">
+        <div class="row">
+          {% if page.sidebar_first %}
+            <aside class="{{ sidebar_first_grid_class }}">
+              {# #sidebar #}
+              <section id="sidebar-first" class="sidebar clearfix">
+                {{ page.sidebar_first }}
+              </section>
+              {# EOF:#sidebar #}
+            </aside>
+          {% endif %}
+
+          <section class="{{ main_grid_class }}">
+
+            {% if page.banner %}
+              {# #banner #}
+              <div id="banner">
+                {# #banner-inside #}
+                <div id="banner-inside" class="clearfix">
+                  {{ page.banner }}
+                </div>
+                {# EOF:#banner-inside #}
+              </div>
+              {# EOF: #banner #}
+            {% endif %}
+
+            {% if page.highlighted %}
+              <div id="highlighted">
+                <div id="highlighted-inside" class="clearfix">
+                  {{ page.highlighted }}
+                </div>
+              </div>
+            {% endif %}
+
+            {% if page.promoted %}
+              {# #promoted #}
+              <div id="promoted" class="clearfix">
+                {# #promoted-inside #}
+                <div id="promoted-inside" class="clearfix">
+                  {{ page.promoted }}
+                </div>
+                {# EOF: #promoted-inside #}
+              </div>
+              {# EOF: #promoted #}
+            {% endif %}
+
+            {# #main #}
+            <div id="main" class="clearfix">
+
+              {% if page.content %}
+                {{ page.content }}
+              {% endif %}
+
+            </div>
+            {# EOF:#main #}
+          </section>
+
+          {% if page.sidebar_second %}
+          <aside class="{{ sidebar_second_grid_class }}">
+            {##sidebar#}
+            <section id="sidebar-second" class="sidebar clearfix">
+              {{ page.sidebar_second }}
+            </section>
+            {# EOF:#sidebar #}
+          </aside>
+          {% endif %}
+
+        </div>
+
+      </div>
+      {# EOF:#main-content #}
+
+    </div>
+    {# EOF: #page-inside #}
+
+  </div>
+
+</div>
+{# EOF: #page #}
+
+
+{% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+  {# #footer #}
+  <footer id="footer" class="clearfix">
+    <div class="container">
+
+      <div class="row">
+        {% if page.footer_first %}
+          <div class="{{ footer_grid_class }}">
+            <div class="footer-area">
+              {{ page.footer_first }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if page.footer_second %}
+          <div class="{{ footer_grid_class }}">
+            <div class="footer-area">
+              {{ page.footer_second }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if page.footer_third %}
+          <div class="{{ footer_grid_class }}">
+            <div class="footer-area">
+              {{ page.footer_third }}
+            </div>
+          </div>
+        {% endif %}
+
+        {% if page.footer_fourth %}
+          <div class="{{ footer_grid_class }}">
+            <div class="footer-area">
+              {{ page.footer_fourth }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </footer>
+  {# EOF #footer #}
+{% endif %}
+
+{% if page.sub_footer_left or page.footer %}
+  {# #subfooter #}
+  <div id="subfooter" class="clearfix">
+    <div class="container">
+      {# #subfooter-inside #}
+      <div id="subfooter-inside" class="clearfix">
+        <div class="row">
+          <div class="col-md-4">
+            {# #subfooter-left #}
+            {% if page.sub_footer_left %}
+              <div class="subfooter-area left">
+                {{ page.sub_footer_left }}
+              </div>
+            {% endif %}
+            {# EOF #subfooter-left #}
+          </div>
+          <div class="col-md-8">
+            {# #subfooter-right #}
+            {% if page.footer %}
+              <div class="subfooter-area right">
+                {{ page.footer }}
+              </div>
+            {% endif %}
+            {# EOF #subfooter-right #}
+          </div>
+        </div>
+      </div>
+      {# EOF #subfooter-inside #}
+    </div>
+  </div>{# EOF #subfooter #}
+{% endif %}
