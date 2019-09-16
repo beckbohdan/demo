@@ -1,0 +1,16 @@
+uuid: b1988296-41c4-43a7-b9a1-5aa55800171c
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: Genres
+vid: genres
+description: ''
+weight: 0

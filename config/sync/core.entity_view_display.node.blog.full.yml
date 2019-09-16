@@ -1,0 +1,263 @@
+uuid: d772702e-edf0-44d2-9abd-37e5c6596b30
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
+    - field.field.node.blog.body
+    - field.field.node.blog.comment
+    - field.field.node.blog.field_genres
+    - field.field.node.blog.field_image
+    - field.field.node.blog.field_souncloud_preview
+    - field.field.node.blog.field_youtube
+    - node.type.blog
+  module:
+    - comment
+    - image
+    - layout_builder
+    - layout_discovery
+    - radix_layouts
+    - soundcloudfield
+    - text
+    - user
+    - youtube
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: radix_brenham
+        layout_settings: {  }
+        components:
+          03b4268a-c79d-4d2c-8bcc-99067b586211:
+            uuid: 03b4268a-c79d-4d2c-8bcc-99067b586211
+            region: sidebar
+            configuration:
+              id: 'field_block:node:blog:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: post_full_400x300_
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          652c5c29-cde7-4dd2-aa6c-4c90381edc55:
+            uuid: 652c5c29-cde7-4dd2-aa6c-4c90381edc55
+            region: contentmain
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          4dbe4e34-55c8-4539-abf1-cf0a76f7371a:
+            uuid: 4dbe4e34-55c8-4539-abf1-cf0a76f7371a
+            region: sidebar
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:field_genres'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 1
+          f396541f-6b4e-4721-b9a3-dca55760b9fa:
+            uuid: f396541f-6b4e-4721-b9a3-dca55760b9fa
+            region: contentmain
+            configuration:
+              id: 'field_block:node:blog:field_youtube'
+              label: youtube
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: youtube_video
+                settings:
+                  youtube_size: responsive
+                  youtube_width: ''
+                  youtube_height: ''
+                  youtube_autoplay: false
+                  youtube_loop: false
+                  youtube_showinfo: false
+                  youtube_controls: false
+                  youtube_autohide: false
+                  youtube_iv_load_policy: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          2f662349-e82b-4ecc-b9dd-f00a9ba6ccea:
+            uuid: 2f662349-e82b-4ecc-b9dd-f00a9ba6ccea
+            region: header
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:blog:links'
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          3eca5cc0-4b95-406e-aa48-03121de43e16:
+            uuid: 3eca5cc0-4b95-406e-aa48-03121de43e16
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:comment'
+              formatter:
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+                type: comment_default
+            additional: {  }
+            weight: 5
+          6b828919-690b-48a3-91c1-3e7a0f543865:
+            uuid: 6b828919-690b-48a3-91c1-3e7a0f543865
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:blog:addtoany'
+            additional: {  }
+            weight: 4
+          fb3ae4a2-8500-40c8-a1d1-3b24b57a4f8a:
+            uuid: fb3ae4a2-8500-40c8-a1d1-3b24b57a4f8a
+            region: content
+            configuration:
+              id: 'field_block:node:blog:field_souncloud_preview'
+              label: souncloud_preview
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: soundcloud_default
+                settings:
+                  soundcloud_player_type: classic
+                  soundcloud_player_width: '100'
+                  soundcloud_player_height: '156'
+                  soundcloud_player_height_sets: '400'
+                  soundcloud_player_visual_height: '450'
+                  soundcloud_player_autoplay: 0
+                  soundcloud_player_color: ff7700
+                  soundcloud_player_hiderelated: 0
+                  soundcloud_player_showartwork: 1
+                  soundcloud_player_showcomments: 1
+                  soundcloud_player_showplaycount: 1
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+id: node.blog.full
+targetEntityType: node
+bundle: blog
+mode: full
+content:
+  addtoany:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment:
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_genres:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_souncloud_preview:
+    weight: 5
+    label: above
+    settings:
+      soundcloud_player_type: classic
+      soundcloud_player_width: 100
+      soundcloud_player_height: 166
+      soundcloud_player_height_sets: 450
+      soundcloud_player_visual_height: 450
+      soundcloud_player_autoplay: ''
+      soundcloud_player_color: ff7700
+      soundcloud_player_hiderelated: ''
+      soundcloud_player_showartwork: ''
+      soundcloud_player_showcomments: true
+      soundcloud_player_showplaycount: ''
+    third_party_settings: {  }
+    type: soundcloud_default
+    region: content
+  field_youtube:
+    weight: 6
+    label: above
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

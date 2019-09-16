@@ -1,0 +1,21 @@
+uuid: 8d6907bd-1ced-489b-8f7d-67367e0e9842
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube
+    - node.type.album
+  module:
+    - youtube
+id: node.album.field_youtube
+field_name: field_youtube
+entity_type: node
+bundle: album
+label: youtube
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

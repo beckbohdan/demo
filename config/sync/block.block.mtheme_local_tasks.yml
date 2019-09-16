@@ -1,0 +1,22 @@
+uuid: ddfc31ed-948f-4b8b-b204-0af2b4718d59
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mtheme
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: mtheme_local_tasks
+theme: mtheme
+region: banner
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

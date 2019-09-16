@@ -1,0 +1,22 @@
+uuid: ff2807b7-9e3a-48fa-a1cb-7fca56cd6a78
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mtheme
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: mtheme_content
+theme: mtheme
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

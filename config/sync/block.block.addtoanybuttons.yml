@@ -1,0 +1,20 @@
+uuid: 9ff8182b-dfc8-46bb-880b-25e7cb26eeef
+langcode: en
+status: true
+dependencies:
+  module:
+    - addtoany
+  theme:
+    - mtheme
+id: addtoanybuttons
+theme: mtheme
+region: footer_fourth
+weight: -8
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: 'AddToAny buttons'
+  provider: addtoany
+  label_display: '0'
+visibility: {  }

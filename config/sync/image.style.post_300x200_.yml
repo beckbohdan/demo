@@ -1,0 +1,15 @@
+uuid: 4dde79a4-ee1d-4619-83cc-36c90000461e
+langcode: en
+status: true
+dependencies: {  }
+name: post_300x200_
+label: post(300x200)
+effects:
+  979d8e08-1adc-4cc4-b540-ff6fb5d4cc76:
+    uuid: 979d8e08-1adc-4cc4-b540-ff6fb5d4cc76
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 300
+      height: 200
+      anchor: center-center

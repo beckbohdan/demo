@@ -1,0 +1,24 @@
+uuid: d686b19e-5c8c-4319-864d-e8b5145af82e
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_albums
+  module:
+    - views
+  theme:
+    - mtheme
+id: views_block__recent_albums_block_1
+theme: mtheme
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'views_block:recent_albums-block_1'
+settings:
+  id: 'views_block:recent_albums-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

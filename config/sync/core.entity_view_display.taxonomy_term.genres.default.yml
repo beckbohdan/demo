@@ -1,0 +1,32 @@
+uuid: 1d366ba5-4555-462f-b925-8cc92d7c9139
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.genres.field_image
+    - taxonomy.vocabulary.genres
+  module:
+    - image
+    - text
+id: taxonomy_term.genres.default
+targetEntityType: taxonomy_term
+bundle: genres
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_image:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden: {  }

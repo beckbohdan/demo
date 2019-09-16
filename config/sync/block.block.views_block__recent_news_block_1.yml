@@ -1,0 +1,24 @@
+uuid: 7586edf0-b1a1-4e8a-b6b9-8e0b16d4abd8
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.recent_news
+  module:
+    - views
+  theme:
+    - mtheme
+id: views_block__recent_news_block_1
+theme: mtheme
+region: sidebar_second
+weight: -10
+provider: null
+plugin: 'views_block:recent_news-block_1'
+settings:
+  id: 'views_block:recent_news-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility: {  }

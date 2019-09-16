@@ -1,0 +1,140 @@
+uuid: 3468d19c-cb00-420f-9318-b0b4fc3a94af
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
+    - field.field.node.album.body
+    - field.field.node.album.comment
+    - field.field.node.album.field_image
+    - node.type.album
+  module:
+    - comment
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          d52211d0-9b53-42e0-9864-3f309e2c508c:
+            uuid: d52211d0-9b53-42e0-9864-3f309e2c508c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:album:links'
+            additional: {  }
+            weight: 0
+          08959365-acca-43a8-a4ff-d0d293a2c74f:
+            uuid: 08959365-acca-43a8-a4ff-d0d293a2c74f
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:album:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          caadff6f-0b45-45b9-a581-1761693a4bc8:
+            uuid: caadff6f-0b45-45b9-a581-1761693a4bc8
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:album:comment'
+              formatter:
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+                type: comment_default
+            additional: {  }
+            weight: 4
+          fd4c8e91-77a0-45c2-bb61-81df0b7d9110:
+            uuid: fd4c8e91-77a0-45c2-bb61-81df0b7d9110
+            region: content
+            configuration:
+              id: 'field_block:node:album:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: main_slider
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          93e23b2e-18c7-4789-8700-2201be3cc872:
+            uuid: 93e23b2e-18c7-4789-8700-2201be3cc872
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:album:addtoany'
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+id: node.album.full
+targetEntityType: node
+bundle: album
+mode: full
+content:
+  addtoany:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  comment:
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

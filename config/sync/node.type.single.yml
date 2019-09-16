@@ -1,0 +1,19 @@
+uuid: fb16f2d1-a3bd-40aa-9ea8-4c3dd913a33f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: Single
+type: single
+description: 'For single tracks'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

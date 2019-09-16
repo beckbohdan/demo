@@ -1,0 +1,15 @@
+uuid: 12c769ff-f705-4144-896b-1e074ce0011a
+langcode: en
+status: true
+dependencies: {  }
+name: post_full_400x300_
+label: post_full(400x300)
+effects:
+  f58ef324-173f-4877-ab64-573a683d8882:
+    uuid: f58ef324-173f-4877-ab64-573a683d8882
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      anchor: center-center

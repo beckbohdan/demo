@@ -1,0 +1,19 @@
+uuid: 392bb58f-3293-4600-b23f-6951f2f41fa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: Genres
+type: genres
+description: 'For categories'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

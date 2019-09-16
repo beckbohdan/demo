@@ -1,0 +1,21 @@
+uuid: 4c187cfa-6cdd-4ec0-b0dc-eee351b7a65a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube
+    - node.type.single
+  module:
+    - youtube
+id: node.single.field_youtube
+field_name: field_youtube
+entity_type: node
+bundle: single
+label: youtube
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube
