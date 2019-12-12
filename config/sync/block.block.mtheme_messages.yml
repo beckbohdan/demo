@@ -1,4 +1,4 @@
-uuid: 42056a04-80f8-43e5-afe7-af154f657ffa
+uuid: a03899c5-4476-454e-ba60-e5ff169bb506
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
 id: mtheme_messages
 theme: mtheme
-region: highlighted
-weight: 0
+region: top_content
+weight: -9
 provider: null
 plugin: system_messages_block
 settings:

@@ -1,4 +1,4 @@
-uuid: 4da8d30c-5ded-4e49-826a-457defde1ba0
+uuid: 34e29a5d-e38a-40f6-a074-b52e521249a0
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: 8zRjTNbfNAJ94lQpZDu6MkyD87GYJ2zpH9VQPVmRbcM
+  default_config_hash: h06zhb3xV9_2_3Zy9NsyylL7YBaEDlMwMEqNwAn8kMo
 id: mtheme_footer
 theme: mtheme
 region: footer

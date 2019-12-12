@@ -1,14 +1,21 @@
-uuid: 0293d092-c0fb-4b99-b5fe-7f4b0f6d476c
+uuid: 2e610fb9-95ca-44f0-80c9-1dbe7a20362d
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_migrate_example_favbeers
+    - field.field.user.user.field_migrate_example_gender
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
+    - field_layout
     - image
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
 id: user.user.compact
@@ -26,4 +33,6 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  field_migrate_example_favbeers: true
+  field_migrate_example_gender: true
   member_for: true

@@ -1,4 +1,4 @@
-uuid: 60f72815-ad8c-481a-9519-682595912a3d
+uuid: 6859298d-02ae-4248-acce-6f45caeb0ff7
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: 8a31Ywc1t2zlddGd3bmDrFMefWqgSK2E02ceFdr-bfc
+  default_config_hash: R2K_qX0ZUMbUL6ie_-S9tZVjvqmlWKlscikgeRv9vhw
 id: mtheme_account_menu
 theme: mtheme
 region: header_top_right
@@ -22,6 +22,6 @@ settings:
   provider: system
   label_display: '0'
   level: 1
-  depth: 1
+  depth: 2
   expand_all_items: false
 visibility: {  }

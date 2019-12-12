@@ -1,7 +1,7 @@
 image_captcha_fonts_preview_map_cache: {  }
 image_captcha_fonts:
-  - modules/captcha/image_captcha/fonts/Tesox/tesox.ttf
-  - modules/captcha/image_captcha/fonts/Tuffy/Tuffy.ttf
+  - modules/contrib/captcha/image_captcha/fonts/Tesox/tesox.ttf
+  - modules/contrib/captcha/image_captcha/fonts/Tuffy/Tuffy.ttf
 image_captcha_font_size: 30
 image_captcha_character_spacing: '1.2'
 image_captcha_image_allowed_chars: aAbBCdEeFfGHhijKLMmNPQRrSTtWXYZ23456789

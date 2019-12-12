@@ -1,23 +1,29 @@
-uuid: bb942851-27cd-42fb-ab57-0c8f41a0ef54
+uuid: 29d71879-6a3a-4c80-8052-14113d406fa3
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.node.album.body
     - field.field.node.album.comment
+    - field.field.node.album.field_field_soundcloud_preview
+    - field.field.node.album.field_field_youtube
     - field.field.node.album.field_genres
     - field.field.node.album.field_image
-    - field.field.node.album.field_souncloud_preview
-    - field.field.node.album.field_youtube
-    - image.style.post_300x200_
+    - image.style.thumbnail
     - node.type.album
   module:
     - comment
+    - field_layout
     - image
+    - layout_discovery
     - path
     - soundcloudfield
     - text
     - youtube
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.album.default
 targetEntityType: node
 bundle: album
@@ -33,7 +39,7 @@ content:
     third_party_settings: {  }
     region: content
   comment:
-    weight: 123
+    weight: 126
     settings: {  }
     third_party_settings: {  }
     type: comment_default
@@ -44,8 +50,22 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_field_soundcloud_preview:
+    weight: 123
+    settings:
+      url: ''
+      placeholder_url: ''
+    third_party_settings: {  }
+    type: soundcloud_url
+    region: content
+  field_field_youtube:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: youtube
+    region: content
   field_genres:
-    weight: 124
+    weight: 125
     settings:
       match_operator: CONTAINS
       size: 60
@@ -54,26 +74,12 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_image:
-    weight: 122
+    weight: 124
     settings:
-      preview_image_style: post_300x200_
       progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
-    region: content
-  field_souncloud_preview:
-    weight: 125
-    settings:
-      url: ''
-      placeholder_url: ''
-    third_party_settings: {  }
-    type: soundcloud_url
-    region: content
-  field_youtube:
-    weight: 126
-    settings: {  }
-    third_party_settings: {  }
-    type: youtube
     region: content
   path:
     type: path

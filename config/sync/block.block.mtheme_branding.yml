@@ -1,4 +1,4 @@
-uuid: 5cfd95dc-e2d3-4e05-a4fd-ef2297ec57ec
+uuid: e23a9f49-63b5-43b4-a3de-6a640e785b88
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+  default_config_hash: Cy3vkpYrD1O5JG-BeEnokF0bByHYDEa8CBfWivB4_SQ
 id: mtheme_branding
 theme: mtheme
 region: header_top_left
-weight: -3
+weight: 0
 provider: null
 plugin: system_branding_block
 settings:
@@ -21,5 +21,5 @@ settings:
   label_display: '0'
   use_site_logo: true
   use_site_name: true
-  use_site_slogan: true
+  use_site_slogan: false
 visibility: {  }

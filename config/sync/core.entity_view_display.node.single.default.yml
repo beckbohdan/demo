@@ -1,69 +1,31 @@
-uuid: 3d716a63-4954-4840-98d7-caa86642893f
+uuid: f2997957-65d5-4505-92a4-fcc28f83cbb4
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.single.body
     - field.field.node.single.comment
+    - field.field.node.single.field_field_soundcloud_preview
+    - field.field.node.single.field_field_youtube
     - field.field.node.single.field_genres
     - field.field.node.single.field_image
-    - field.field.node.single.field_souncloud_preview
-    - field.field.node.single.field_youtube
-    - image.style.post_300x200_
     - node.type.single
   module:
-    - comment
-    - image
+    - field_layout
     - soundcloudfield
-    - text
     - user
     - youtube
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.single.default
 targetEntityType: node
 bundle: single
 mode: default
 content:
-  addtoany:
-    weight: 7
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  body:
-    label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
-  comment:
-    weight: 5
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    type: comment_default
-    region: content
-  field_genres:
-    weight: 4
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_image:
-    weight: 2
-    label: above
-    settings:
-      image_style: post_300x200_
-      image_link: content
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_souncloud_preview:
-    weight: 3
+  field_field_soundcloud_preview:
+    weight: 101
     label: above
     settings:
       soundcloud_player_type: classic
@@ -80,8 +42,8 @@ content:
     third_party_settings: {  }
     type: soundcloud_default
     region: content
-  field_youtube:
-    weight: 6
+  field_field_youtube:
+    weight: 102
     label: above
     settings:
       youtube_size: 450x315
@@ -96,9 +58,21 @@ content:
     third_party_settings: {  }
     type: youtube_video
     region: content
+  field_genres:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   links:
-    weight: 0
+    weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  addtoany: true
+  body: true
+  comment: true
+  field_image: true

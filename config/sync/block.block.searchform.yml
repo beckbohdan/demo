@@ -1,4 +1,4 @@
-uuid: b6c249b7-3cfc-44e0-9e16-00c01d16fea7
+uuid: 49f62527-e7cb-4182-9288-4ec46bd3fbf5
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
 id: searchform
 theme: mtheme
 region: footer_third
-weight: -10
+weight: 0
 provider: null
 plugin: search_form_block
 settings:

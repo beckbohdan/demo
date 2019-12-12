@@ -1,4 +1,4 @@
-uuid: b4ba3e51-03fd-4de9-97d1-8bed93a85784
+uuid: 05984a6a-edb7-4744-8057-c5c19ccc1df7
 langcode: en
 status: true
 dependencies:
@@ -11,9 +11,14 @@ dependencies:
     - image.style.medium
     - node.type.article
   module:
+    - field_layout
     - image
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
 id: node.article.teaser

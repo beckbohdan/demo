@@ -1,4 +1,4 @@
-uuid: 822208b0-5509-43a0-b790-92270066f214
+uuid: d7acb1bc-f454-469b-89e5-d6a617ea3d6e
 langcode: en
 status: true
 dependencies:
@@ -9,11 +9,11 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: rH6PpAn7-RScha1rGkohGAYSSh_1OVeZzioJPzPw6O4
+  default_config_hash: f3Dd5TnUiFDjFZp9yEGJInwt6cUzs7O6SvLTFTATSlU
 id: mtheme_tools
 theme: mtheme
-region: sidebar_second
-weight: -7
+region: footer_second
+weight: -8
 provider: null
 plugin: 'system_menu_block:tools'
 settings:

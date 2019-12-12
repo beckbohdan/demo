@@ -1,0 +1,29 @@
+uuid: 90ede11d-d473-41ec-bfcd-7a57b3e686f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_genres
+    - node.type.news
+    - taxonomy.vocabulary.genres
+id: node.news.field_genres
+field_name: field_genres
+entity_type: node
+bundle: news
+label: field_genres
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      genres: genres
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

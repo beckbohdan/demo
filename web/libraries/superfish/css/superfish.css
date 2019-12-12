@@ -97,7 +97,7 @@ ul.sf-menu .sf-sub-indicator {
   width: 12px;
 }
 ul.sf-menu .sf-sub-indicator:after {
-  content: "";
+  content: "▼";
   left: 0;
   line-height: 1;
   position: absolute;
@@ -291,7 +291,7 @@ ul.sf-menu.sf-navbar li li li.sfHover > ul {
   top: 0;
 }
 ul.sf-menu.sf-navbar ul .sf-sub-indicator:after {
-  content: "";
+  content: "▼";
 }
 ul.sf-menu.sf-navbar ul ul .sf-sub-indicator:after {
   content: "►";
@@ -320,10 +320,10 @@ ul.sf-menu.sf-accordion li.sf-expanded > ul {
   top: auto !important;
 }
 ul.sf-menu.sf-accordion .sf-sub-indicator:after {
-  content: "";
+  content: "▼";
 }
 ul.sf-menu.sf-accordion.sf-accordion-with-buttons .sf-accordion-button:after {
-  content: "";
+  content: "▼";
   margin: 0 0 0 1em;
 }
 ul.sf-menu.sf-accordion.sf-accordion-with-buttons li.sf-expanded > .sf-accordion-button:after {

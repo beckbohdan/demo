@@ -1,4 +1,4 @@
-uuid: ff2807b7-9e3a-48fa-a1cb-7fca56cd6a78
+uuid: a570ee70-6b73-443e-a939-ee6f95a4e82f
 langcode: en
 status: true
 dependencies:
@@ -7,11 +7,11 @@ dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
 id: mtheme_content
 theme: mtheme
 region: content
-weight: -3
+weight: -6
 provider: null
 plugin: system_main_block
 settings:

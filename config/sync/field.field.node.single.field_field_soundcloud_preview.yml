@@ -1,0 +1,21 @@
+uuid: e294c41b-36bf-4552-9c9a-287368cf51b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_field_soundcloud_preview
+    - node.type.single
+  module:
+    - soundcloudfield
+id: node.single.field_field_soundcloud_preview
+field_name: field_field_soundcloud_preview
+entity_type: node
+bundle: single
+label: field_soundcloud_preview
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: soundcloud

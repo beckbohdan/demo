@@ -1,15 +1,15 @@
-uuid: c96b1611-0da6-4775-935a-5d5245c97d29
+uuid: 5cd10af2-cbfe-410a-9705-82405b981cb2
 langcode: en
 status: true
 dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
 id: mtheme_local_actions
 theme: mtheme
-region: top_content
-weight: -6
+region: banner
+weight: -8
 provider: null
 plugin: local_actions_block
 settings:

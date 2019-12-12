@@ -1,11 +1,11 @@
-uuid: c8c30376-559a-472d-9f5a-b5811b30473a
+uuid: d2bb4a11-f18e-4a03-b291-edb9467a8a3a
 langcode: en
 status: true
 dependencies:
   theme:
     - mtheme
 _core:
-  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
 id: mtheme_page_title
 theme: mtheme
 region: content

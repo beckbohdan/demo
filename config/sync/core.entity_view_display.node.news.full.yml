@@ -1,0 +1,290 @@
+uuid: a0583cde-7961-4a6a-82ca-3787eedebd18
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.node_comments.default
+    - core.entity_view_mode.node.full
+    - field.field.node.news.body
+    - field.field.node.news.field_comments
+    - field.field.node.news.field_field_soundcloud_preview
+    - field.field.node.news.field_field_youtube
+    - field.field.node.news.field_genres
+    - field.field.node.news.field_image
+    - field.field.node.news.layout_builder__layout
+    - image.style.post_300x200_
+    - node.type.news
+  module:
+    - comment
+    - field_layout
+    - image
+    - layout_builder
+    - layout_discovery
+    - radix_layouts
+    - soundcloudfield
+    - text
+    - user
+    - youtube
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: radix_brenham
+        layout_settings: {  }
+        components:
+          9dcadd5b-417f-40ff-9d8f-93c4977ba071:
+            uuid: 9dcadd5b-417f-40ff-9d8f-93c4977ba071
+            region: contentmain
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 0
+          3d2eb8e5-e009-4cb5-98ff-e5503edec8be:
+            uuid: 3d2eb8e5-e009-4cb5-98ff-e5503edec8be
+            region: sidebar
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: post_300x200_
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          52dad2c0-5acf-4d71-a2f5-09d0d94c5e08:
+            uuid: 52dad2c0-5acf-4d71-a2f5-09d0d94c5e08
+            region: contentmain
+            configuration:
+              id: 'field_block:node:news:field_field_youtube'
+              label: field_youtube
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: youtube_video
+                settings:
+                  youtube_size: responsive
+                  youtube_width: ''
+                  youtube_height: ''
+                  youtube_autoplay: false
+                  youtube_loop: false
+                  youtube_showinfo: false
+                  youtube_controls: false
+                  youtube_autohide: false
+                  youtube_iv_load_policy: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+          04ad6a3e-f7d6-4d59-ac4b-6b68dea0d131:
+            uuid: 04ad6a3e-f7d6-4d59-ac4b-6b68dea0d131
+            region: contentmain
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:news:field_genres'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 1
+          5ab7aaf0-76a2-4178-9c03-2c6ae73aee4c:
+            uuid: 5ab7aaf0-76a2-4178-9c03-2c6ae73aee4c
+            region: sidebar
+            configuration:
+              id: 'field_block:node:news:field_genres'
+              label: field_genres
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          2335784f-4414-4e49-bb71-5dd9b96818ea:
+            uuid: 2335784f-4414-4e49-bb71-5dd9b96818ea
+            region: contentmain
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:news:links'
+            additional: {  }
+            weight: 3
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          ce5cf997-98aa-40c8-82fc-e669e22e7818:
+            uuid: ce5cf997-98aa-40c8-82fc-e669e22e7818
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_field_soundcloud_preview'
+              label: field_soundcloud_preview
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: soundcloud_default
+                settings:
+                  soundcloud_player_type: classic
+                  soundcloud_player_width: '100'
+                  soundcloud_player_height: '156'
+                  soundcloud_player_height_sets: '430'
+                  soundcloud_player_visual_height: '450'
+                  soundcloud_player_autoplay: 0
+                  soundcloud_player_color: ff7700
+                  soundcloud_player_hiderelated: 0
+                  soundcloud_player_showartwork: 1
+                  soundcloud_player_showcomments: 1
+                  soundcloud_player_showplaycount: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 5
+          a72874d4-4094-4544-8d37-7e0720bf6e09:
+            uuid: a72874d4-4094-4544-8d37-7e0720bf6e09
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:news:addtoany'
+            additional: {  }
+            weight: 7
+          5194597b-3d12-4c3b-9077-c46c56ca8f84:
+            uuid: 5194597b-3d12-4c3b-9077-c46c56ca8f84
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_comments'
+              label: Comments
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: comment_default
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 8
+        third_party_settings: {  }
+id: node.news.full
+targetEntityType: node
+bundle: news
+mode: full
+content:
+  addtoany:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comments:
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_field_soundcloud_preview:
+    weight: 5
+    label: hidden
+    settings:
+      soundcloud_player_type: classic
+      soundcloud_player_width: '100'
+      soundcloud_player_height: '156'
+      soundcloud_player_height_sets: '430'
+      soundcloud_player_visual_height: '450'
+      soundcloud_player_color: ff7700
+      soundcloud_player_showartwork: '1'
+      soundcloud_player_showcomments: '1'
+      soundcloud_player_autoplay: 0
+      soundcloud_player_hiderelated: 0
+      soundcloud_player_showplaycount: 0
+    third_party_settings: {  }
+    type: soundcloud_default
+    region: content
+  field_field_youtube:
+    weight: 6
+    label: hidden
+    settings:
+      youtube_size: responsive
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+  field_genres:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: post_300x200_
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  layout_builder__layout: true

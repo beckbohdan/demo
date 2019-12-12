@@ -1,4 +1,4 @@
-uuid: 9670a4a6-7cb5-4d9a-9c70-bf103e16c738
+uuid: e37049a2-d330-44bd-a8d2-d12cbcd1d4ee
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ id: node.album.title
 field_name: title
 entity_type: node
 bundle: album
-label: Albums
+label: Album
 description: ''
 required: true
 translatable: true

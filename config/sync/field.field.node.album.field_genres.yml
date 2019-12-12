@@ -1,4 +1,4 @@
-uuid: 70d00572-2cab-46fc-88ba-cd3ac4779698
+uuid: c0cbc752-7b38-4017-bca4-433bf75c7688
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ id: node.album.field_genres
 field_name: field_genres
 entity_type: node
 bundle: album
-label: genres
+label: field_genres
 description: ''
 required: false
 translatable: true

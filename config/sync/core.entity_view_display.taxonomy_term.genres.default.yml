@@ -1,18 +1,88 @@
-uuid: 1d366ba5-4555-462f-b925-8cc92d7c9139
+uuid: 44a253bc-e8d2-406a-ad15-890a92606871
 langcode: en
 status: true
 dependencies:
   config:
     - field.field.taxonomy_term.genres.field_image
+    - image.style.post_300x200_
     - taxonomy.vocabulary.genres
   module:
     - image
+    - layout_builder
+    - layout_discovery
+    - radix_layouts
     - text
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: radix_moscone
+        layout_settings: {  }
+        components:
+          eb72f6d8-f2b4-4471-a3ee-d353dcb6d74a:
+            uuid: eb72f6d8-f2b4-4471-a3ee-d353dcb6d74a
+            region: sidebar
+            configuration:
+              id: 'field_block:taxonomy_term:genres:field_image'
+              label: image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: image
+                settings:
+                  image_style: post_300x200_
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          780bec71-28ef-45fc-8128-caadf37a2249:
+            uuid: 780bec71-28ef-45fc-8128-caadf37a2249
+            region: sidebar
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:taxonomy_term:genres:addtoany'
+            additional: {  }
+            weight: 1
+          7568ea87-07a0-4be9-b1af-b1dfd524cff5:
+            uuid: 7568ea87-07a0-4be9-b1af-b1dfd524cff5
+            region: contentmain
+            configuration:
+              id: 'field_block:taxonomy_term:genres:description'
+              label: Description
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components: {  }
+        third_party_settings: {  }
 id: taxonomy_term.genres.default
 targetEntityType: taxonomy_term
 bundle: genres
 mode: default
 content:
+  addtoany:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   description:
     label: hidden
     type: text_default
@@ -22,10 +92,10 @@ content:
     third_party_settings: {  }
   field_image:
     weight: 1
-    label: above
+    label: hidden
     settings:
-      image_style: ''
-      image_link: ''
+      image_style: post_300x200_
+      image_link: content
     third_party_settings: {  }
     type: image
     region: content

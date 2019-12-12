@@ -1,24 +1,30 @@
-uuid: d686b19e-5c8c-4319-864d-e8b5145af82e
+uuid: a0d1a919-fcba-44d9-94b6-3cfd08f6eca7
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.recent_albums
   module:
+    - system
     - views
   theme:
     - mtheme
 id: views_block__recent_albums_block_1
 theme: mtheme
 region: sidebar_second
-weight: -9
+weight: -8
 provider: null
 plugin: 'views_block:recent_albums-block_1'
 settings:
   id: 'views_block:recent_albums-block_1'
   label: ''
   provider: views
-  label_display: '0'
+  label_display: visible
   views_label: ''
   items_per_page: none
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: /album
+    negate: true
+    context_mapping: {  }

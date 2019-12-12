@@ -1,4 +1,4 @@
-uuid: c31484bc-bc53-456c-bfa3-30de25f51e46
+uuid: 90855cfc-d3ec-471c-9f29-6f108aaa8aac
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,12 @@ dependencies:
     - field.field.node.article.field_tags
     - node.type.article
   module:
+    - field_layout
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 _core:
   default_config_hash: 2rIr6K5Q0UQ9khg0zE_CK-PtJH76UL-BDDZcZnZzwCc
 id: node.article.rss
@@ -22,6 +27,7 @@ content:
     weight: 100
     region: content
 hidden:
+  addtoany: true
   body: true
   comment: true
   field_image: true

@@ -1,16 +1,23 @@
-version: "3"
+version: "2"
 
 services:
   php:
-    image: wodby/drupal:$DRUPAL_TAG
     environment:
       PHP_FPM_CLEAR_ENV: "no"
+      PHP_XHPROF: 1
+      #PHP_XDEBUG: 1
+      #PHP_XDEBUG_DEFAULT_ENABLE: 1
     volumes:
-      - codebase:/var/www/html
+      - ./:/var/www/html
 
   nginx:
     volumes:
-      - codebase:/var/www/html
+      - ./:/var/www/html
 
-volumes:
-  codebase:
+  mariadb:
+    volumes:
+      - ../database:/var/lib/mysql
+
+  traefik:
+    ports:
+      - '80:80'

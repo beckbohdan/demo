@@ -1,4 +1,4 @@
-uuid: 1e043ab3-037b-442a-af35-ea698853f180
+uuid: 6620565a-cda0-4d1f-a034-cad1a1358960
 langcode: en
 status: true
 dependencies:
@@ -7,9 +7,15 @@ dependencies:
     - image.style.post_300x200_
     - taxonomy.vocabulary.genres
   module:
+    - field_layout
     - image
+    - layout_discovery
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: taxonomy_term.genres.default
 targetEntityType: taxonomy_term
 bundle: genres

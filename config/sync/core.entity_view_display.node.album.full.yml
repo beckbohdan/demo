@@ -1,4 +1,4 @@
-uuid: 3468d19c-cb00-420f-9318-b0b4fc3a94af
+uuid: fd32fe92-34a0-4355-b999-25d8627cee78
 langcode: en
 status: true
 dependencies:
@@ -7,69 +7,37 @@ dependencies:
     - core.entity_view_mode.node.full
     - field.field.node.album.body
     - field.field.node.album.comment
+    - field.field.node.album.field_field_soundcloud_preview
+    - field.field.node.album.field_field_youtube
+    - field.field.node.album.field_genres
     - field.field.node.album.field_image
     - node.type.album
   module:
     - comment
+    - field_layout
     - image
     - layout_builder
     - layout_discovery
+    - radix_layouts
+    - soundcloudfield
     - text
     - user
+    - youtube
 third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
   layout_builder:
     allow_custom: false
     enabled: true
     sections:
       -
-        layout_id: layout_onecol
+        layout_id: radix_sanderson
         layout_settings: {  }
         components:
-          d52211d0-9b53-42e0-9864-3f309e2c508c:
-            uuid: d52211d0-9b53-42e0-9864-3f309e2c508c
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'extra_field_block:node:album:links'
-            additional: {  }
-            weight: 0
-          08959365-acca-43a8-a4ff-d0d293a2c74f:
-            uuid: 08959365-acca-43a8-a4ff-d0d293a2c74f
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:album:body'
-              formatter:
-                label: hidden
-                type: text_default
-                settings: {  }
-                third_party_settings: {  }
-            additional: {  }
-            weight: 2
-          caadff6f-0b45-45b9-a581-1761693a4bc8:
-            uuid: caadff6f-0b45-45b9-a581-1761693a4bc8
-            region: content
-            configuration:
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              id: 'field_block:node:album:comment'
-              formatter:
-                label: above
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-                type: comment_default
-            additional: {  }
-            weight: 4
-          fd4c8e91-77a0-45c2-bb61-81df0b7d9110:
-            uuid: fd4c8e91-77a0-45c2-bb61-81df0b7d9110
-            region: content
+          376f9524-7d78-4067-a747-9c7a7b905b71:
+            uuid: 376f9524-7d78-4067-a747-9c7a7b905b71
+            region: column1
             configuration:
               id: 'field_block:node:album:field_image'
               label: Image
@@ -79,23 +47,140 @@ third_party_settings:
                 label: hidden
                 type: image
                 settings:
-                  image_style: main_slider
+                  image_style: post_300x200_
                   image_link: ''
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
+            weight: 0
+          ae813a40-ab50-4013-ab78-da3dabbcfe6d:
+            uuid: ae813a40-ab50-4013-ab78-da3dabbcfe6d
+            region: column2
+            configuration:
+              id: 'field_block:node:album:field_field_youtube'
+              label: field_youtube
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: youtube_video
+                settings:
+                  youtube_size: responsive
+                  youtube_width: ''
+                  youtube_height: ''
+                  youtube_autoplay: false
+                  youtube_loop: false
+                  youtube_showinfo: false
+                  youtube_controls: false
+                  youtube_autohide: false
+                  youtube_iv_load_policy: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
             weight: 1
-          93e23b2e-18c7-4789-8700-2201be3cc872:
-            uuid: 93e23b2e-18c7-4789-8700-2201be3cc872
-            region: content
+          3733607d-38d1-4bd9-b5df-d80f331e4fa0:
+            uuid: 3733607d-38d1-4bd9-b5df-d80f331e4fa0
+            region: column2
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:album:links'
+            additional: {  }
+            weight: 0
+          8daf37cc-f2ba-4770-90ee-38c735138423:
+            uuid: 8daf37cc-f2ba-4770-90ee-38c735138423
+            region: secondarycolumn1
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:album:field_field_soundcloud_preview'
+              formatter:
+                label: hidden
+                settings:
+                  soundcloud_player_type: classic
+                  soundcloud_player_width: 100
+                  soundcloud_player_height: 166
+                  soundcloud_player_height_sets: 450
+                  soundcloud_player_visual_height: 450
+                  soundcloud_player_autoplay: ''
+                  soundcloud_player_color: ff7700
+                  soundcloud_player_hiderelated: ''
+                  soundcloud_player_showartwork: ''
+                  soundcloud_player_showcomments: true
+                  soundcloud_player_showplaycount: ''
+                third_party_settings: {  }
+                type: soundcloud_default
+            additional: {  }
+            weight: 0
+          91a01a13-7b05-4b4a-a154-adaef9001a43:
+            uuid: 91a01a13-7b05-4b4a-a154-adaef9001a43
+            region: column1
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:album:field_genres'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 1
+          fe987e6f-154a-41f4-be55-ec856716054e:
+            uuid: fe987e6f-154a-41f4-be55-ec856716054e
+            region: column1
             configuration:
               label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
               id: 'extra_field_block:node:album:addtoany'
             additional: {  }
-            weight: 3
+            weight: 2
+          886d953d-605a-4530-917b-cc43138c6359:
+            uuid: 886d953d-605a-4530-917b-cc43138c6359
+            region: column2
+            configuration:
+              id: 'field_block:node:album:body'
+              label: Body
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          f513f91a-d13d-4628-b348-7f8c08a5ccbb:
+            uuid: f513f91a-d13d-4628-b348-7f8c08a5ccbb
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:album:comment'
+              formatter:
+                type: comment_default
+                label: above
+                settings:
+                  view_mode: default
+                  pager_id: 0
+                third_party_settings: {  }
+            additional: {  }
+            weight: 7
         third_party_settings: {  }
 id: node.album.full
 targetEntityType: node
@@ -103,7 +188,7 @@ bundle: album
 mode: full
 content:
   addtoany:
-    weight: 4
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -115,17 +200,59 @@ content:
     third_party_settings: {  }
     region: content
   comment:
-    weight: 3
+    type: comment_default
+    weight: 7
+    region: content
     label: above
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    type: comment_default
+  field_field_soundcloud_preview:
+    weight: 3
+    label: hidden
+    settings:
+      soundcloud_player_type: classic
+      soundcloud_player_width: 100
+      soundcloud_player_height: 166
+      soundcloud_player_height_sets: 450
+      soundcloud_player_visual_height: 450
+      soundcloud_player_autoplay: ''
+      soundcloud_player_color: ff7700
+      soundcloud_player_hiderelated: ''
+      soundcloud_player_showartwork: ''
+      soundcloud_player_showcomments: true
+      soundcloud_player_showplaycount: ''
+    third_party_settings: {  }
+    type: soundcloud_default
+    region: content
+  field_field_youtube:
+    weight: 2
+    label: hidden
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+  field_genres:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   field_image:
-    weight: 2
-    label: above
+    weight: 4
+    label: hidden
     settings:
       image_style: ''
       image_link: ''

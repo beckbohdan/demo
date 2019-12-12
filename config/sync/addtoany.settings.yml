@@ -4,12 +4,12 @@ additional_css: ''
 additional_js: ''
 universal_button: default
 custom_universal_button: ''
-universal_button_placement: after
+universal_button_placement: before
 no_3p: false
 entities:
   media: 1
   node: 1
-  comment: 1
+  comment: 0
   block_content: 0
   contact_message: 0
   feeds_feed: 0
@@ -18,6 +18,6 @@ entities:
   shortcut: 0
   taxonomy_term: 1
   user: 0
-  menu_link_content: 1
+  menu_link_content: 0
 _core:
   default_config_hash: 9YPlBuinIKLe5jVEf-aIhZvKFn77i18yD4CrNR0BbVQ

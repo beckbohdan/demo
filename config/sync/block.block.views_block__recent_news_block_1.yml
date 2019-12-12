@@ -1,4 +1,4 @@
-uuid: 7586edf0-b1a1-4e8a-b6b9-8e0b16d4abd8
+uuid: f9bca74e-d49a-484b-b8e5-2298808ad34b
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ dependencies:
 id: views_block__recent_news_block_1
 theme: mtheme
 region: sidebar_second
-weight: -10
+weight: -9
 provider: null
 plugin: 'views_block:recent_news-block_1'
 settings:

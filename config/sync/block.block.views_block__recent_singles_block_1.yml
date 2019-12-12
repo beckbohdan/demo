@@ -1,17 +1,18 @@
-uuid: 4f837955-6464-4d99-9c93-3d8e96ed54f6
+uuid: 85065143-2949-4983-a127-1d586436fa63
 langcode: en
 status: true
 dependencies:
   config:
     - views.view.recent_singles
   module:
+    - system
     - views
   theme:
     - mtheme
 id: views_block__recent_singles_block_1
 theme: mtheme
 region: sidebar_second
-weight: -8
+weight: -7
 provider: null
 plugin: 'views_block:recent_singles-block_1'
 settings:
@@ -20,5 +21,10 @@ settings:
   provider: views
   label_display: visible
   views_label: ''
-  items_per_page: '5'
-visibility: {  }
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: ''
+    negate: true
+    context_mapping: {  }

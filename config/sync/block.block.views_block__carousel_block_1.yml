@@ -1,4 +1,4 @@
-uuid: af085c60-c38d-4bec-bf71-793ffd5f4889
+uuid: 6f3e4759-2d56-4a7f-8fa0-d5b01e96331c
 langcode: en
 status: true
 dependencies:
@@ -21,7 +21,7 @@ settings:
   provider: views
   label_display: '0'
   views_label: ''
-  items_per_page: none
+  items_per_page: '3'
 visibility:
   request_path:
     id: request_path

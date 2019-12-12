@@ -1,0 +1,108 @@
+uuid: d6883e4e-0fe9-4f54-8e40-5209a51bad47
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.node_comments.default
+    - field.field.node.news.body
+    - field.field.node.news.field_comments
+    - field.field.node.news.field_field_soundcloud_preview
+    - field.field.node.news.field_field_youtube
+    - field.field.node.news.field_genres
+    - field.field.node.news.field_image
+    - node.type.news
+  module:
+    - comment
+    - field_layout
+    - image
+    - soundcloudfield
+    - text
+    - user
+    - youtube
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  addtoany:
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comments:
+    weight: 2
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_field_soundcloud_preview:
+    weight: 5
+    label: hidden
+    settings:
+      soundcloud_player_type: classic
+      soundcloud_player_width: '100'
+      soundcloud_player_height: '156'
+      soundcloud_player_height_sets: '420'
+      soundcloud_player_visual_height: '450'
+      soundcloud_player_color: ff7700
+      soundcloud_player_showartwork: '1'
+      soundcloud_player_showcomments: '1'
+      soundcloud_player_autoplay: 0
+      soundcloud_player_hiderelated: 0
+      soundcloud_player_showplaycount: 0
+    third_party_settings: {  }
+    type: soundcloud_default
+    region: content
+  field_field_youtube:
+    weight: 6
+    label: hidden
+    settings:
+      youtube_size: responsive
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+    region: content
+  field_genres:
+    weight: 3
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

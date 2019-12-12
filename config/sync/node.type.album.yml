@@ -1,4 +1,4 @@
-uuid: 710e48f6-1ecd-4e0e-b4d1-23dd3069f3c4
+uuid: c5d2159d-94ee-4e78-8dad-cc128de7185b
 langcode: en
 status: true
 dependencies:
@@ -12,8 +12,8 @@ third_party_settings:
     parent: 'main:'
 name: Album
 type: album
-description: ''
+description: 'Music Album content. Please register if you need to create one.'
 help: ''
-new_revision: false
+new_revision: true
 preview_mode: 1
 display_submitted: true

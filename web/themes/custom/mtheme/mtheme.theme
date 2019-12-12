@@ -23,20 +23,20 @@ function mtheme_preprocess_html(&$variables) {
   if (!empty($variables['page']['featured_top'])) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }
-
+}
   // fix header lib
   $fixed_header = theme_get_setting('fixed_header');
   if ($fixed_header) {
     $variables['attributes']['class'][] = 'fixed-header-enabled';
     $variables['#attached']['library'][] = 'mtheme/fixed-header';
   }
-}
 
   // button to top lib
   $to_top = theme_get_setting('scrolltop_display');
   if ($to_top) {
     $variables['#attached']['library'][] = 'mtheme/to-top';
   }
+
 
 function mtheme_preprocess_breadcrumb(&$variables){
   if($variables['breadcrumb']){
@@ -125,7 +125,7 @@ function mtheme_preprocess_page(&$variables) {
   } else {
     $variables['footer_grid_class'] = 'col-sm-12';
   }
-
+}
 function mtheme_preprocess_maintenance_page(&$variables) {
   if (!$variables['db_is_active']) {
     $variables['site_name'] = '';
@@ -190,4 +190,3 @@ function mtheme_preprocess_field(&$variables) {
 function mtheme_preprocess_field__entity_reference(&$variables) {
   $variables['entity_reference_target_type'] = $variables['element']['#items']->getItemDefinition()->getSetting('target_type');
 }
-?>
