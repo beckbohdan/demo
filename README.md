@@ -11,7 +11,8 @@ Here is intructions.
 6. docker-compose up -d
 7. if problems with nginx restart again
 8. in folder maria-db is Database
-9. config in sync/config 
+9. config in config/sync
+10. Use Devel to see views 
 
 
 
