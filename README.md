@@ -1,3 +1,29 @@
+######## How to start proj 
+Here is demo : http://t95831b1.beget.tech/en
+
+
+Here is intructions.
+1. Clone repo:https://github.com/beckbohdan/demo.git
+2. if Ubuntu :  service apache2 stop
+3.      next :  service nginx restart
+4. composer install ( not update)
+5. all pass and user is drupal
+6. docker-compose up -d
+7. if problems with nginx restart again
+8. in folder maria-db is Database
+9. config in sync/config 
+
+
+
+
+
+
+
+
+
+
+
+
 # Docker-based Drupal stack
 
 [![Build Status](https://travis-ci.org/wodby/docker4drupal.svg?branch=master)](https://travis-ci.org/wodby/docker4drupal)
